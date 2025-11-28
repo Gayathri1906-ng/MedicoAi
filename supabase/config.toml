@@ -1,0 +1,10 @@
+project_id = "jslguwrwmocbdungyfot"
+
+[functions.analyze-symptoms]
+verify_jwt = false
+
+[functions.chat-assistant]
+verify_jwt = false
+
+[functions.extract-medical-report]
+verify_jwt = false
