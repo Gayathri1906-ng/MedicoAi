@@ -3,6 +3,9 @@
 
 MedicoAi is a **personal healthcare assistant web application** that helps users manage their health by providing symptom analysis, emergency contacts, health reminders, and quick access to emergency services. It integrates **AI-based symptom analysis** with a **backend database** to store user data and provides instant actions in emergency situations.
 
+## Dashboard Screenshot
+
+![Dashboard Screenshot](https://raw.githubusercontent.com/Gayathri1906-ng/MedicoAi/main/public/Screenshot%202025-11-29%20101602.png)
 ---
 
 ## Features
