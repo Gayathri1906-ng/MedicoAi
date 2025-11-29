@@ -1,73 +1,82 @@
-# Welcome to your Lovable project
 
-## Project info
+# MedicoAi
 
-**URL**: https://lovable.dev/projects/b766c414-e6e7-463c-818a-e8ef4a22052d
+MedicoAi is a **personal healthcare assistant web application** that helps users manage their health by providing symptom analysis, emergency contacts, health reminders, and quick access to emergency services. It integrates **AI-based symptom analysis** with a **backend database** to store user data and provides instant actions in emergency situations.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+### 1. Symptom Analysis
+- Enter your symptoms and severity.
+- If the symptom record exists in the database, it retrieves the previous analysis.
+- If not, AI analyzes the symptoms using **OpenAI API** and stores the result in the database.
+- Provides:
+  - Summary of symptoms
+  - Possible conditions
+  - Suggested actions
+  - Risk level (low, medium, high)
+  - OTC medicines if applicable
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b766c414-e6e7-463c-818a-e8ef4a22052d) and start prompting.
+### 2. Emergency Numbers
+- Quick access to important numbers like:
+  - Ambulance (112)
+  - Police (100)
+  - Helpline (108)
 
-Changes made via Lovable will be committed automatically to this repo.
+### 3. Personal Emergency Contacts
+- Add and manage personal emergency contacts such as family or doctors.
+- Call contacts directly from the dashboard.
 
-**Use your preferred IDE**
+### 4. Health Reminders
+- Set reminders for upcoming health checkups, lab tests, or medication.
+- Add optional notes (e.g., fasting required).
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 5. Quick Actions
+- Navigate to nearest hospitals using geolocation and Google Maps.
+- Request ambulance instantly.
+- Notify family or friends via SMS.
+- Call your doctor directly.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Frontend:** React, Next.js, TypeScript
+- **UI Components:** Shadcn/UI, Lucide Icons
+- **Backend:** Supabase (PostgreSQL + Edge Functions)
+- **AI:** OpenAI GPT-4o-mini (Chat Completions)
+- **Other:** Sonner for toast notifications, Date-fns for formatting
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Installation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+1. Clone the repository:
+git clone https://github.com/<YourUsername>/MedicoAi.git
+cd MedicoAi
+
+2.Install dependencies:
+npm install
+
+3.Setup environment variables in .env file:
+NEXT_PUBLIC_SUPABASE_URL=<your-supabase-url>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-supabase-anon-key>
+SUPABASE_SERVICE_ROLE_KEY=<your-supabase-service-role-key>
+OPENAI_API_KEY=<your-openai-api-key>
+
+4.Run the development server:
 npm run dev
-```
+Open http://localhost:3000
+ to view the app.
 
-**Edit a file directly in GitHub**
+**How It Works**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Users input symptoms in the Symptom Analysis section.
+The system first checks the Supabase database:
+If a record exists, it returns previous analysis.
+If not, it calls OpenAI API to analyze the symptoms.
+Analysis is stored in the backend for future reference.
+Users can manage emergency contacts, health reminders, and access quick actions anytime.
 
-**Use GitHub Codespaces**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b766c414-e6e7-463c-818a-e8ef4a22052d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
